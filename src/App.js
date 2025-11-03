@@ -2,10 +2,18 @@ import {
   readMoney,
   readWinningNumbers,
   readBonusNumber,
-} from "./src/view/InputView.js";
-import { countTickets } from "./src/validators/money.js";
-import { generate } from "./src/service/LottoMachine.js";
-import { printPurchaseCount, printTickets } from "./src/view/OutputView.js";
+} from "./view/InputView.js";
+import { countTickets } from "./validators/money.js";
+import { generate } from "./service/LottoMachine.js";
+import {
+  printPurchaseCount,
+  printTickets,
+  printStats,
+  printYield,
+} from "./view/OutputView.js";
+import { aggregateResults } from "./service/judge.js";
+import { buildResultLines } from "./service/resultBuilder.js";
+import { calcTotalPrize, calcYield } from "./service/settlement.js";
 
 class App {
   async run() {
@@ -19,9 +27,13 @@ class App {
     const winning = await readWinningNumbers();
     const bonus = await readBonusNumber(winning);
 
-    this.tickets = tickets;
-    this.winning = winning;
-    this.bonus = bonus;
+    const counts = aggregateResults(tickets, winning, bonus);
+    const lines = buildResultLines(counts);
+    printStats(lines);
+
+    const totalPrize = calcTotalPrize(counts);
+    const yieldPercent = calcYield(totalPrize, money);
+    printYield(yieldPercent);
   }
 }
 
