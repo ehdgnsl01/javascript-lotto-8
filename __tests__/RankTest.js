@@ -1,7 +1,7 @@
 import { decideRank } from "../src/service/judge.js";
 import { RANK } from "../src/constants.js";
 
-describe("E단계 - 등수 판정", () => {
+describe("등수 판정", () => {
   test("6개 일치 → 1등", () => {
     expect(decideRank(6, false)).toBe(RANK.FIRST);
   });

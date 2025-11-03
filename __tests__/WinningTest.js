@@ -1,6 +1,6 @@
 import { parseWinningNumbers } from "../src/validators/winning.js";
 
-describe("C단계 - 당첨 번호 파싱/검증", () => {
+describe("당첨 번호 파싱/검증", () => {
   test.each(["1,2,3,4,5,6", " 1, 2,3 ,4,5 ,6 "])(
     "쉼표로 구분된 6개의 정수 입력을 파싱한다: %p",
     (line) => {

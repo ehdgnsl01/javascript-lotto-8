@@ -1,6 +1,6 @@
 import { parseBonusNumber } from "../src/validators/bonus.js";
 
-describe("D단계 - 보너스 번호 파싱/검증", () => {
+describe("보너스 번호 파싱/검증", () => {
   const winning = [1, 2, 3, 4, 5, 6];
 
   test.each(["7", "  7  "])("정상 입력: %p", (line) => {
