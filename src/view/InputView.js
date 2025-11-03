@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { parseMoney } from "../validators/money.js";
+import { parseMoney } from "../validators/money_.js";
 import { parseWinningNumbers } from "../validators/winning.js";
 import { parseBonusNumber } from "../validators/bonus.js";
 

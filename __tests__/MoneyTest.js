@@ -1,4 +1,4 @@
-import { parseMoney, countTickets } from "../src/validators/money.js";
+import { parseMoney, countTickets } from "../src/validators/money_.js";
 import { LOTTO, ERROR } from "../src/constants.js";
 
 describe("구입 금액 입력/검증", () => {
