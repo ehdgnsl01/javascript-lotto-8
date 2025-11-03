@@ -1,4 +1,4 @@
-import { buildResultLines } from "../src/service/result-builder.js";
+import { buildResultLines } from "../src/service/resultBuilder.js";
 import { RANK } from "../src/constants.js";
 
 describe("결과 라인 빌더", () => {
