@@ -3,8 +3,8 @@ import {
   readWinningNumbers,
   readBonusNumber,
 } from "./view/InputView.js";
-import { countTickets } from "./validators/money_.js";
-import { generate } from "./service/lottoMachine_.js";
+import { countTickets } from "./validators/money.js";
+import { generate } from "./service/lottoMachine.js";
 import {
   printPurchaseCount,
   printTickets,
